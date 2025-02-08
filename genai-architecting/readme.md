@@ -88,7 +88,8 @@ A vendor-agnostic approach using open standards:
   - Observability: OpenTelemetry + Prometheus (Instead of AWS CloudWatch)
   - Security: OAuth2 + OIDC (Instead of AWS IAM)
 
-What essential components should be conveyed as necessary when deploying a GenAI workload for production
+What essential components should be conveyed as necessary when deploying a GenAI workload for production:
+
 **Guardrails:**
   Prevent prompt injections & data leaks:	
     - Input validation & filtering
