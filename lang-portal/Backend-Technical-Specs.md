@@ -10,12 +10,13 @@ You have been tasked with creating the backend API of the application.
 
 ## Technical Restrictions:
 - Use SQLite3 as the database
-You can use any language or framework 
+- You can use any language or framework 
 - Does not require authentication/authorization
 - Assume there is a single user
 - The backend will be built using Go
 - The API will be built using Gin
 - The API will always return JSON
+- Mage is the task runner for Go
 
 ## Database Schema
 
@@ -320,3 +321,61 @@ We have the following tables:
       "group_id": 1,
       "created_at": "2023-10-01T12:00:00Z"
     }
+
+### Directory Structure
+lang-portal-backend
+└── lang-portal-backend
+|   ├── cmd
+|       └── main.go
+|   ├── internal
+|       ├── handlers
+|           ├── dashboard.go
+|           ├── groups.go
+|           ├── study_activities.go
+|           ├── study_sessions.go
+|           ├── words.go
+|           └── reset.go
+|       ├── models
+|           ├── group.go
+|           ├── study_activity.go
+|           ├── study_session.go
+|           ├── word.go
+|           └── word_review_item.go
+|       ├── repositories
+|           ├── group_repository.go
+|           ├── study_activity_repository.go
+|           ├── study_session_repository.go
+|           ├── word_repository.go
+|           └── word_review_item_repository.go
+|       ├── services
+|           ├── group_service.go
+|           ├── study_activity_service.go
+|           ├── study_session_service.go
+|           ├── word_service.go
+|           └── word_review_item_service.go
+|       └── db
+|           ├── migrations
+|               └── 001_create_tables.sql
+|           └── seeds
+|               └── seed_data.json
+|   ├── words.db
+|   ├── go.mod
+|   ├── go.sum
+|   └── README.md
+
+# Navigate to the backend_go directory
+cd /Users/securingus/Downloads/BootCamp/free-genai-bootcamp-2025/lang-portal/backend_go
+
+# Initialize a new Go module
+go mod init lang-portal-backend
+
+# Create the directory structure
+mkdir -p cmd internal/handlers internal/models internal/repositories internal/services internal/db/migrations internal/db/seeds
+
+# Create the initial files
+touch cmd/main.go internal/handlers/dashboard.go internal/handlers/groups.go internal/handlers/study_activities.go internal/handlers/study_sessions.go internal/handlers/words.go internal/handlers/reset.go internal/models/group.go internal/models/study_activity.go internal/models/study_session.go internal/models/word.go internal/models/word_review_item.go internal/repositories/group_repository.go internal/repositories/study_activity_repository.go internal/repositories/study_session_repository.go internal/repositories/word_repository.go internal/repositories/word_review_item_repository.go internal/services/group_service.go internal/services/study_activity_service.go internal/services/study_session_service.go internal/services/word_service.go internal/services/word_review_item_service.go internal/db/migrations/001_create_tables.sql internal/db/seeds/seed_data.json words.db README.md
+
+# Add necessary dependencies
+go get github.com/gin-gonic/gin
+go get github.com/mattn/go-sqlite3
+go get github.com/magefile/mage
