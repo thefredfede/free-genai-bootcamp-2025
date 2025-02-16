@@ -181,6 +181,32 @@ To make configurations to the study portal
 - POST /api/reset_history
 - POST /api/full_reset
 
+## Mage Tasks
+Mage is a task runner for Go
+### Initialize Database
 
+### Migrate database
+This task will run a series of migration sql files on the database.
+Migrations will live in the 'migratons' folder.
+The migration files will be run in order oftheir file name.
+### Seed Data
+This task will import json files and transform them into target data for our database.
 
+All see files live in the "seeds: folder.
+All seed files should be loaded.
 
+In our task we should have DSL to specify each seed file and its expected group word name.
+```json
+[
+    {
+        "kanji": "いい",
+        "romaji": "ii",
+        "english": "good",
+        "parts": [
+            { "kanji": "い", "romaji": ["i"] },
+            { "kanji": "い", "romaji": ["i"] }
+    ]
+  },
+  ...
+]
+```
