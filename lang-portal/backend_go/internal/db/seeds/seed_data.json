@@ -1,0 +1,14 @@
+[
+    {
+        "japanese": "猫",
+        "romaji": "neko",
+        "english": "cat",
+        "parts": ["noun"]
+    },
+    {
+        "japanese": "犬",
+        "romaji": "inu",
+        "english": "dog",
+        "parts": ["noun"]
+    }
+]
