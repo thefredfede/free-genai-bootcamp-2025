@@ -1,3 +1,4 @@
+// filepath: /Users/securingus/Downloads/BootCamp/free-genai-bootcamp-2025/lang-portal/backend_go/magefile.go
 //go:build mage
 // +build mage
 
