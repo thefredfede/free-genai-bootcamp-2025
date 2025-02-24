@@ -32,5 +32,5 @@ func main() {
 	r.POST("/api/study_sessions/:id/words/:word_id/review", handlers.ReviewWord)
 	r.POST("/api/study_activities", handlers.CreateStudyActivity)
 
-	r.Run() // listen and serve on 0.0.0.0:8080
+	r.Run(":8080") // listen and serve on port 8080
 }
